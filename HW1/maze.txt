@@ -1,0 +1,167 @@
+Your starting position is [1, 0].
+Your current position is [1, 0].
+Input: 1
+You chose North!
+Wall detected!
+Your current position is [1, 0].
+Input: 3
+You chose South!
+Wall detected!
+Your current position is [1, 0].
+Input: 4
+You chose West!
+Wall detected!
+Your current position is [1, 0].
+Input: 2
+You chose East!
+Pushed [1, 0] into the stack.
+Moved to [1, 1].
+Your current position is [1, 1].
+Input: 2
+You chose East!
+Wall detected!
+Your current position is [1, 1].
+Input: 3
+You chose South!
+Pushed [1, 1] into the stack.
+Moved to [2, 1].
+Your current position is [2, 1].
+Input: 3
+You chose South!
+Pushed [2, 1] into the stack.
+Moved to [3, 1].
+Your current position is [3, 1].
+Input: 3
+You chose South!
+Pushed [3, 1] into the stack.
+Moved to [4, 1].
+Deadlock at [4, 1]!
+Input: 2
+You chose East!
+Wall detected!
+pop the stack and move to [3, 1].
+Your current position is [3, 1].
+Input: 1
+You chose North!
+Already Visited!
+Deadlock at [3, 1]!
+Input: 2
+You chose East!
+Wall detected!
+pop the stack and move to [2, 1].
+Your current position is [2, 1].
+Input: 2
+You chose East!
+Pushed [2, 1] into the stack.
+Moved to [2, 2].
+Your current position is [2, 2].
+Input: 3
+You chose South!
+Wall detected!
+Your current position is [2, 2].
+Input: 3
+You chose South!
+Wall detected!
+Your current position is [2, 2].
+Input: 2
+You chose East!
+Pushed [2, 2] into the stack.
+Moved to [2, 3].
+Your current position is [2, 3].
+Input: 2
+You chose East!
+Wall detected!
+Your current position is [2, 3].
+Input: 2
+You chose East!
+Wall detected!
+Your current position is [2, 3].
+Input: 2
+You chose East!
+Wall detected!
+Your current position is [2, 3].
+Input: 2
+You chose East!
+Wall detected!
+Your current position is [2, 3].
+Input: 2
+You chose East!
+Wall detected!
+Your current position is [2, 3].
+Input: 3
+You chose South!
+Pushed [2, 3] into the stack.
+Moved to [3, 3].
+Your current position is [3, 3].
+Input: 4
+You chose West!
+Wall detected!
+Your current position is [3, 3].
+Input: 1
+You chose North!
+Already Visited!
+Your current position is [3, 3].
+Input: 2
+You chose East!
+Wall detected!
+Your current position is [3, 3].
+Input: 3
+You chose South!
+Pushed [3, 3] into the stack.
+Moved to [4, 3].
+Your current position is [4, 3].
+Input: 4
+You chose West!
+Wall detected!
+Your current position is [4, 3].
+Input: 1
+You chose North!
+Already Visited!
+Your current position is [4, 3].
+Input: 1
+You chose North!
+Already Visited!
+Your current position is [4, 3].
+Input: 1
+You chose North!
+Already Visited!
+Your current position is [4, 3].
+Input: 1
+You chose North!
+Already Visited!
+Your current position is [4, 3].
+Input: 1
+You chose North!
+Already Visited!
+Your current position is [4, 3].
+Input: 1
+You chose North!
+Already Visited!
+Your current position is [4, 3].
+Input: 1
+You chose North!
+Already Visited!
+Your current position is [4, 3].
+Input: 1
+You chose North!
+Already Visited!
+Your current position is [4, 3].
+Input: 1
+You chose North!
+Already Visited!
+Your current position is [4, 3].
+Input: 1
+You chose North!
+Already Visited!
+Your current position is [4, 3].
+Input: 2
+You chose East!
+Pushed [4, 3] into the stack.
+Moved to [4, 4].
+Your current position is [4, 4].
+Input: 2
+You chose East!
+Pushed [4, 4] into the stack.
+Moved to [4, 5].
+Maze exit!
+finished.
