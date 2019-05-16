@@ -102,8 +102,8 @@ void insert_customer(int arrival_time)
     customer.arrival_time = arrival_time;
     customer.service_time = (int)(max_serv_time*generate_random_number()) + 1;
     enqueue(&queue, customer);
-    printf("고객 %d이 %d분에 들어옵니다. 서비스시간은 %d분입니다.\n",
-            customer.id, customer.arrival_time, customer.service_time);
+    //printf("고객 %d이 %d분에 들어옵니다. 서비스시간은 %d분입니다.\n",
+    //        customer.id, customer.arrival_time, customer.service_time);
 }
 // 큐에서 기다리는 고객을 꺼내어 고객의 서비스 시간을 반환한다.
 int remove_customer()
@@ -116,8 +116,8 @@ int remove_customer()
     service_time = customer.service_time - 1;
     served_customers++;
     waited_time += clock - customer.arrival_time;
-    printf("고객 %d이 %d분에 서비스를 시작합니다. 대기시간은 %d분이었습니다.\n", 
-            customer.id, clock, clock - customer.arrival_time);
+    //printf("고객 %d이 %d분에 서비스를 시작합니다. 대기시간은 %d분이었습니다.\n", 
+    //        customer.id, clock, clock - customer.arrival_time);
     return service_time;
 }
 // 통계치를 출력한다.
@@ -125,13 +125,14 @@ void print_stat()
 {
     int service_idle_time_total = 0;
     printf("\n");
+    printf("arriv_prob = %f 결과\n", arrival_prob);
     printf("서비스받은 고객수 = %d ", served_customers);
     printf("전체 대기 시간 = %d분 ", waited_time);
     printf("1인당 평균 대기 시간 = %f분 ", (double)waited_time/served_customers);
     printf("아직 대기중인 고객수 = %d명\n", customers - served_customers);
     for(int i=0; i<3; i++){
-        service_idle_time_total += service_idle_time[0];
-        printf("server[%d]의 idle 시간의 총합: %d", i, service_idle_time[i]);
+        service_idle_time_total += service_idle_time[i];
+        printf("server[%d]의 idle 시간의 총합: %d\n", i, service_idle_time[i]);
     }
     printf("server들의 idle 시간의 총합: %d\n", service_idle_time_total);
 }
@@ -142,16 +143,22 @@ void print_graph(int arrival_prob[], int value[])
     //
 }
 
-int main(void)
+void execute_simulation(float arrival_prob_input)
 {
-//    srand((unsigned int)time(NULL));
-
+    // 시뮬레이션의 결과 초기화
+    customers = 0;          // 전체고객수
+    served_customers = 0;       // 서비스받은 고객수
+    waited_time = 0;            // 고객들이 기다린 시간
+    service_idle_time[0] = 0;
+    service_idle_time[1] = 0;
+    service_idle_time[2] = 0;
+    arrival_prob = arrival_prob_input;
     int service_time[3] = {};     // 서비스의 alarm clock
     clock = 0;      // global clock
 
     while(clock < duration){
         clock++;    // clock 시간 하나 경과
-        printf("현재시각=%d\n", clock);
+        //printf("현재시각=%d\n", clock);
 
         if( is_customer_arrived() ){      // new customer 처리
             insert_customer(clock);
@@ -163,10 +170,10 @@ int main(void)
                 service_idle_time[i]++;
         }
 
-        
+        /*
         for(int i=0; i<3; i++)
             printf("service time[%d] : %d\n", i, service_time[i]);
-        
+        */
 
         for(int k=0; k < 3; k++){    // every service man k
             if(service_time[k] > 0) // 여기부터 service 처리
@@ -178,7 +185,16 @@ int main(void)
     }
 
     print_stat();   // 변경이 필요함;
+}
 
+int main(void)
+{
+//    srand((unsigned int)time(NULL));
+
+    for(float i=0.1; i<=1.0; i+=0.1)
+        execute_simulation(i);
+    
+    // print_graph();
     return 0;
 }
 
