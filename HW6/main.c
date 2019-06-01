@@ -51,6 +51,7 @@ int main(void)
 		clock_t start = clock();
 		fib_memoization(i);
 		printf("%d: %0.10f\n", i, (float)(clock() - start)/CLOCKS_PER_SEC);
+		printf("%d\n", fib_memoization(i));
 	}
 
 	return 0;
